@@ -12,5 +12,3 @@ class Test
         return 'Hello, World!';
     }
 }
-
-// helooo
