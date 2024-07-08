@@ -6,13 +6,10 @@
 require_once '../src/Core/Autoloader.php';
 
 use App\Core\Autoloader;
-use App\Entity\Test;
 use App\Core\Router;
 
 Autoloader::autoload();
 
+$router = new Router();
 
-$display = new Test();
-echo $display->display();
-
-$router=new Router();
+$router->execute();
