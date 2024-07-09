@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" href="/projet-php/public/css/style.css">
 </head>
 
 <body>
@@ -34,6 +35,9 @@
             <div>
                 <label for="message">message</label>
                 <textarea name="" id=""></textarea>
+            </div>
+            <div class="send">
+                <input type="submit">
             </div>
             <br>
 
