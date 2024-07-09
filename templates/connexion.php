@@ -1,48 +1,28 @@
-<!DOCTYPE html>
-<html lang="fr">
+<main>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/login.js" defer type="module"></script>
-    <title>Log in</title>
-    <link rel="stylesheet" href="/projet-php/public/css/connexion.css">
-</head>
+    <h1>Connexion</h1>
 
-<body>
-    <header></header>
-    <main>
+    <form action="/projet-php/login" method="post">
+        <div>
+            <input type="email" id="email" name="email" placeholder="Entrez votre email" >
+        </div>
 
+        <div>
+            <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" >
+        </div>
 
-        <form>
+        <div>
+            <label><input type="checkbox">Se souvenir de moi</label>
+        </div>
 
-            <h1>Connexion</h1>
+        <a href="#">Mot de passe oublié ?</a>
+        <br>
 
-            <div>
-                <input type="email" id="email" placeholder="Entrez votre email" required>
-            </div>
+        <input type="submit" class="btn" value="Connectez-vous">
+        <br>
 
-            <div>
-                <input type="password" id="password" placeholder="Entrez votre mot de passe" required>
-            </div>
+        <p>Vous n'avez pas de compte ? <a href="#">Enregistrez-vous</a></p>
 
-            <div>
-                <label><input type="checkbox">Se souvenir de moi</label>
-            </div>
+    </form>
 
-            <a href="#">Mot de passe oublié ?</a>
-            <br>
-
-            <input type="submit" class="btn" value="Connectez-vous">
-            <br>
-
-            <p>Vous n'avez pas de compte ? <a href="#">Enregistrez-vous</a></p>
-
-        </form>
-
-    </main>
-    <footer>
-    </footer>
-</body>
-
-</html>
+</main>

@@ -38,7 +38,10 @@ class Router
             $this->currentController->showLoginForm();
         });
 
-
+        $this->add_route('/login', function () {
+            $this->currentController = new ConnexionController();
+            $this->currentController->logIn();
+        });
     }
 
     // method add_route utilise uniquement par la class

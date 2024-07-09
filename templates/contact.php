@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="/projet-php/public/css/style.css">
-</head>
-
-<body>
-    <header></header>
     <main>
         <h1>Contact</h1>
         <form action="">
@@ -43,6 +32,3 @@
 
         </form>
     </main>
-</body>
-
-</html>

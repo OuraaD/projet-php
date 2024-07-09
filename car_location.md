@@ -18,3 +18,11 @@ INSERT INTO car (model, description, prix, image_pass) VALUES
 ('Honda Civic', 'Compacte sportive avec un design audacieux.',70.90, 'honda_civic.jpg'),
 ('BMW Série 1', 'Luxe et performance à l\’état pur.', 80.90, 'bmw_serie1.jpg'),
 ('Mercedes Classe A', 'Compacte premium avec un intérieur sophistiqué.', 95.90, 'mercedes_classe_a.jpg');
+
+create table user (
+id INT PRIMARY KEY AUTO_INCREMENT,
+pseudo VARCHAR (255),
+email VARCHAR (255) UNIQUE,
+mot_de_passe VARCHAR(255),
+statut boolean
+);
