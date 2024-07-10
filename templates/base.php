@@ -1,3 +1,9 @@
+<?php
+
+use App\Core\Session;
+
+$session=new Session();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +23,8 @@
         <a href="<?= SITE_NAME; ?>/contact">Contact</a>
         <a href="<?= SITE_NAME; ?>/connexion">Connexion</a>
     </header>
+    
+<?=$session->displayFlashMessage(); ?>
     
     <?= $content;?>
 
