@@ -26,3 +26,7 @@ email VARCHAR (255) UNIQUE,
 mot_de_passe VARCHAR(255),
 statut boolean
 );
+
+
+INSERT INTO user (pseudo,email,mot_de_passe,statut) VALUES (
+    'Kenzi77','kenzidu77@gmail.com',12345, TRUE), ('Mariaa', 'marialucas@gmail.com', 12345678, FALSE);
