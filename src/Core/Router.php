@@ -62,6 +62,11 @@ class Router
             $this->currentController = new AdminUserController();
             $this->currentController->showUserUpdateForm($param);
         });
+
+        $this->add_route('/dashboard/users/update', function () {
+            $this->currentController = new AdminUserController();
+            $this->currentController->modifyUserById();
+        });
     }
 
     // method add_route utilise uniquement par la class

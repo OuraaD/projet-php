@@ -1,21 +1,16 @@
 <main>
 
-    <h1>Connexion</h1>
+    <h1>Formulaire de modification</h1>
 
-    <form>
+    <form action="<?php SITE_NAME; ?>/dasboard/users/update" method="POST">
         <div>
-            <label for="userName">User-name</label>
-            <input type="userName" id="userName" name="password">
+            <label for="userName">Username</label>
+            <input type="userName" id="userName" name="password" value="<?= $user ['pseudo']?>">
         </div>
 
         <div>
             <label for="email">email</label>
-            <input type="email" id="email" name="email">
-        </div>
-
-        <div>
-            <label for="Password">Mot de passe</label>
-            <input type="password" id="password" name="password">
+            <input type="email" id="email" name="email" value="<?= $user ['email']?>">
         </div>
 
     </form>
