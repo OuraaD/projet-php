@@ -11,7 +11,12 @@ class AdminUserController extends AbstractAdminController
     public function users()
     {
         $repository = new UserRepository();
-        $utilisateurs=$repository->getAllUser();
-        $this->render('admin/dashboard-users',['users'=>$utilisateurs]);
+        $utilisateurs = $repository->getAllUser();
+        $this->render('dashboard-users', ['users' => $utilisateurs]);
+    }
+
+    public function showUserUpdateForm($param)
+    {
+        $this->render('user-update-form', ['id' => $param['id']]);
     }
 }

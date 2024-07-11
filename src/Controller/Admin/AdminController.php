@@ -8,7 +8,6 @@ class AdminController extends AbstractAdminController
 {
     public function index()
     {
-    $this->render('admin/dashboard');
+        $this->render('dashboard');
     }
-
 }

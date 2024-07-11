@@ -42,6 +42,6 @@ class ConnexionController extends AbstractController
                     header("Location:" . SITE_NAME . '/connexion');
                 }
             }
-        } 
+        }
     }
 }
