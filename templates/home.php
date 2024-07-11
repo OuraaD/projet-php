@@ -2,5 +2,5 @@
 
 
     <main>
-        <h1>Home Page</h1>
+        <h1>RENT TA BAGNOLE</h1>
     </main>

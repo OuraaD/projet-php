@@ -2,10 +2,15 @@
 
 namespace App\Core;
 
-use App\Controller\CarController;
-use App\Controller\HomeController;
-use App\Controller\ContactController;
-use App\Controller\ConnexionController;
+use App\Controller\Front\CarController;
+use App\Controller\Front\HomeController;
+use App\Controller\Front\ContactController;
+use App\Controller\Front\ConnexionController;
+use App\Controller\Admin\AdminController;
+use App\Controller\Admin\AdminUserController;
+
+
+
 
 class Router
 {
@@ -41,6 +46,16 @@ class Router
         $this->add_route('/login', function () {
             $this->currentController = new ConnexionController();
             $this->currentController->logIn();
+        });
+
+        $this->add_route('/dashboard', function () {
+            $this->currentController = new AdminController();
+            $this->currentController->index();
+        });
+
+        $this->add_route('/dashboard/users', function () {
+            $this->currentController = new AdminUserController();
+            $this->currentController->users();
         });
     }
 

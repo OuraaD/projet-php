@@ -12,16 +12,24 @@ $session=new Session();
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/projet-php/public/css/style.css">
-    <link rel="stylesheet" href="/projet-php/public/css/connexion.css">
-    <link rel="stylesheet" href="/projet-php/public/css/home.css">
+    <!-- <link rel="stylesheet" href="/projet-php/public/css/style.css">
+    <link rel="stylesheet" href="/projet-php/public/css/connexion.css">  -->
+ <link rel="stylesheet" href="/projet-php/public/css/home.css"> 
 </head>
 
 <body>
 <header>
-        <a href="<?= SITE_NAME; ?>/">Home</a>
-        <a href="<?= SITE_NAME; ?>/contact">Contact</a>
-        <a href="<?= SITE_NAME; ?>/connexion">Connexion</a>
+
+
+
+<nav class="nav">
+  <a class="nav-link active" aria-current="page" href="<?= SITE_NAME; ?>/">Home</a>
+  <a class="nav-link" href="<?= SITE_NAME; ?>/contact">Contact</a>
+  <a class="nav-link" href="<?= SITE_NAME; ?>/connexion">Connexion</a>
+  <a class="nav-link" href="<?= SITE_NAME; ?>/dashboard">Dashboard</a>
+
+</nav>
+
     </header>
     
 <?=$session->displayFlashMessage(); ?>

@@ -11,4 +11,12 @@ class UserRepository extends  AbstractRepository
         $stmt->execute();
         return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
+
+    public function getAllUser()
+    {
+        $stmt = $this->pdo->prepare('SELECT email, pseudo,statut FROM user');
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
 }

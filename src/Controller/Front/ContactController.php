@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Controller;
-use App\Controller\AbstractController;
+namespace App\Controller\Front;
+use App\Controller\Front\AbstractController;
 
 class ContactController extends AbstractController
 {
