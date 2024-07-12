@@ -27,14 +27,12 @@ $session = new Session();
             <a class="nav-link active" aria-current="page" href="<?= SITE_NAME; ?>/">Home</a>
             <a class="nav-link" href="<?= SITE_NAME; ?>/contact">Contact</a>
             <a class="nav-link" href="<?= SITE_NAME; ?>/connexion">Connexion</a>
-            <a class="nav-link" href="<?= SITE_NAME; ?>/dashboard">Dashboard</a>
 
         </nav>
 
     </header>
 
     <?= $session->displayFlashMessage(); ?>
-
     <?= $content; ?>
 
     <footer></footer>

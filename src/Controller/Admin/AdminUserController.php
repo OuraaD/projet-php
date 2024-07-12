@@ -3,58 +3,59 @@
 namespace App\Controller\Admin;
 
 use App\Controller\Admin\AbstractAdminController;
-use App\Repository\UserRepository;
 use App\Core\Session;
+use App\Repository\UserRepository;
 
 class AdminUserController extends AbstractAdminController
 {
-
-    public function users()
+    public function index()
     {
-        $repository = new UserRepository();
-        $utilisateurs = $repository->getAllUser();
+        $repo = new UserRepository;
+        $utilisateurs = $repo->getAllUser();
+
         $this->render('dashboard-users', ['users' => $utilisateurs]);
     }
 
-    public function showUserUpdateForm($param)
+    public function showUserUpdateForm($x)
     {
-        // $param['id']
-        $user = new UserRepository();
-        $recup = $user->getUserById($param['id']);
+        $modif = new UserRepository;
+        $recup = $modif->getUserById($x['id']);
         $this->render('user-update-form', ['user' => $recup]);
     }
+
     public function modifyUserById()
     {
-    
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $session=new Session();
+            $session = new Session();
             if (
                 isset($_POST['email'])
                 && isset($_POST['pseudo'])
                 && isset($_POST['id'])
+                && isset($_POST['statut'])
                 && !empty($_POST['email'])
                 && !empty($_POST['pseudo'])
                 && !empty($_POST['id'])
-
-
+                && !empty($_POST['statut'])
             ) {
                 $email = trim($_POST['email']);
                 $pseudo = trim($_POST['pseudo']);
                 $id = trim($_POST['id']);
+                $statut = $_POST['statut'] === 'true' ? true : false;
 
-                $modify=new UserRepository;
-                $isUpdateResult=$modify->updateUserById($email,$pseudo,$id);
+
+                $modify = new UserRepository;
+                $isUpdateResult = $modify->updateUserById($pseudo, $email, $statut, $id);
+
 
                 if ($isUpdateResult) {
                     $session->setFlashMessage("L'utilisateur a été mis à jour avec succès.");
-                    header('Location:'. SITE_NAME .'/dashboard/users/modifier');
+                    header('Location:' . SITE_NAME . "/dashboard/users/modifier/$id");
                     exit;
-                }else{
+                } else {
                     $session->setFlashMessage("Echec de la mise à jour .");
-                    header('Location:'. SITE_NAME .'/dashboard/users/modifier');
+                    header('Location:' . SITE_NAME . "/dashboard/users/modifier/$id");
                     exit;
                 }
-
             }
         }
     }

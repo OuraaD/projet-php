@@ -13,6 +13,15 @@ class ConnexionController extends AbstractController
         $this->render('connexion');
     }
 
+    public function logOut()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+        header("Location:" . SITE_NAME . '/');
+        exit;
+    }
+
     public function logIn()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -37,9 +46,12 @@ class ConnexionController extends AbstractController
                     header("Location:" . SITE_NAME . '/connexion');
                 }
 
+                $session->createSession($user);
+
                 if ($user && $user['mot_de_passe'] == $password) {
                     $session->setFlashMessage('Vous etes connecté', 'success');
-                    header("Location:" . SITE_NAME . '/connexion');
+                    header("Location:" . SITE_NAME . '/');
+                    exit;
                 }
             }
         }

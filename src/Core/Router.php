@@ -8,6 +8,8 @@ use App\Controller\Front\ContactController;
 use App\Controller\Front\ConnexionController;
 use App\Controller\Admin\AdminController;
 use App\Controller\Admin\AdminUserController;
+use App\Controller\Admin\AdminCarController;
+
 
 
 
@@ -48,6 +50,11 @@ class Router
             $this->currentController->logIn();
         });
 
+        $this->add_route('/deconnexion', function () {
+            $this->currentController = new ConnexionController();
+            $this->currentController->logOut();
+        });
+
         $this->add_route('/dashboard', function () {
             $this->currentController = new AdminController();
             $this->currentController->index();
@@ -55,7 +62,7 @@ class Router
 
         $this->add_route('/dashboard/users', function () {
             $this->currentController = new AdminUserController();
-            $this->currentController->users();
+            $this->currentController->index();
         });
 
         $this->add_route('/dashboard/users/modifier/{id}', function ($param) {
@@ -66,6 +73,22 @@ class Router
         $this->add_route('/dashboard/users/update', function () {
             $this->currentController = new AdminUserController();
             $this->currentController->modifyUserById();
+        });
+
+        $this->add_route('/dashboard/car', function () {
+            $this->currentController = new AdminCarController();
+            $this->currentController->index();
+        });
+
+        
+        $this->add_route('/dashboard/car/add', function () {
+            $this->currentController = new AdminCarController();
+            $this->currentController->showCarCreateForm();
+        });
+
+        $this->add_route('/dashboard/car/modifier', function () {
+            $this->currentController = new AdminCarController();
+            $this->currentController->modifyCar();
         });
     }
 
